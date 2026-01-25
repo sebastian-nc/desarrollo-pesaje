@@ -3,9 +3,11 @@ import { FilaTablaRecibo } from "./FilaTablaRecibo";
 
 interface Props {
     recibos: Recibo[];
+    onEliminar: (id: string) => void;
+    isEliminar: boolean;
 }
 
-export function TablaRecibos({ recibos }: Props) {
+export function TablaRecibos({ recibos, onEliminar, isEliminar }: Props) {
     return (
         <table>
             <thead>
@@ -19,7 +21,7 @@ export function TablaRecibos({ recibos }: Props) {
             <tbody>
                 {
                     recibos.map((recibo) => {
-                        return <FilaTablaRecibo key={recibo.id} recibo={recibo} />
+                        return <FilaTablaRecibo key={recibo.id} recibo={recibo} isEliminar={isEliminar} onEliminar={onEliminar} />
                     })
                 }
             </tbody>
