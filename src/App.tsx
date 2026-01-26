@@ -13,7 +13,8 @@ function App() {
   const [isEliminar, setIsEliminar] = useState(false);
 
   function handleAgregar(monto: number, descripcion: string, pagado: boolean) {
-    console.log(monto, descripcion, pagado)
+    const nuevoRecibo = { id: crypto.randomUUID(), descripcion, monto, pagado, fecha: new Date() }
+    setRecibos((prev) => [...prev, nuevoRecibo])
   }
 
   function handleEliminar(id: string) {
