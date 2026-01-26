@@ -5,10 +5,10 @@ interface Props {
     recibos: Recibo[];
     onEliminar: (id: string) => void;
     isEliminar: boolean;
-    onActualizarRecibo: ({ id, cambios }: PropReciboActualizar) => void;
+    onActualizar: ({ id, reciboValue }: PropReciboActualizar) => void;
 }
 
-export function TablaRecibos({ recibos, onEliminar, isEliminar, onActualizarRecibo }: Props) {
+export function TablaRecibos({ recibos, onEliminar, isEliminar, onActualizar }: Props) {
     return (
         <table>
             <thead>
@@ -22,7 +22,7 @@ export function TablaRecibos({ recibos, onEliminar, isEliminar, onActualizarReci
             <tbody>
                 {
                     recibos.map((recibo) => {
-                        return <FilaTablaRecibo key={recibo.id} recibo={recibo} isEliminar={isEliminar} onEliminar={onEliminar} onActualizarRecibo={onActualizarRecibo} />
+                        return <FilaTablaRecibo key={recibo.id} recibo={recibo} isEliminar={isEliminar} onEliminar={onEliminar} onActualizar={onActualizar} />
                     })
                 }
             </tbody>

@@ -5,3 +5,8 @@ export interface Recibo {
     pagado: boolean;
     fecha: Date
 }
+
+export interface PropReciboActualizar {
+    id: string;
+    cambios: Partial<Omit<Recibo, 'fecha' | 'id'>>
+}
