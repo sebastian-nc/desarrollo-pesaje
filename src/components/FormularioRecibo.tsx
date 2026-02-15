@@ -20,20 +20,20 @@ export function FormularioRecibo({ onAgregar }: Props) {
 
 
     return (
-        <form onSubmit={guardarFormulario}>
-            <label htmlFor="monto">
+        <form onSubmit={guardarFormulario} className="border p-3 rounded-2xl mx-auto flex flex-col gap-2 w-75 shadow-lg">
+            <label htmlFor="monto" className="inline-flex items-center gap-2">
                 Monto
-                <input type="number" name="monto" placeholder="50.60" required />
+                <input type="number" name="monto" placeholder="50.60" required className="p-2" />
             </label>
-            <label htmlFor="descripcion">
+            <label htmlFor="descripcion" className="inline-flex items-center gap-2">
                 Descripcion
-                <input type="text" name="descripcion" placeholder="Recibo de gas" required />
+                <input type="text" name="descripcion" placeholder="Recibo de gas" required className="p-2" />
             </label>
-            <label htmlFor="pagado">
+            <label htmlFor="pagado" className="inline-flex items-center gap-2">
                 Pagado
                 <input type="checkbox" name="pagado" />
             </label>
-            <button type="submit">Guardar"</button>
+            <button type="submit" className="border px-4 py-2 bg-blue-500 text-white rounded-lg">Guardar</button>
         </form>
     )
 }
